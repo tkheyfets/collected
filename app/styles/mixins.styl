@@ -6,3 +6,9 @@ clearfix() {
   }
   &:after { clear: both; }
 }
+
+calc(property, expr) {
+  {property}: s("-webkit-calc(%s)", expr);
+  {property}: s("-moz-calc(%s)", expr);
+  {property}: s("calc(%s)", expr);
+}

@@ -1,3 +1,68 @@
+body {
+  background-color: #f4f4f4;
+  overflow: hidden;
+  * {
+    box-sizing: border-box;
+  }
+
+}
+.header {
+  background-color: primaryColor;
+  padding: 12px;
+  color: #fff;
+  border-bottom: 1px solid darkPrimaryColor;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  img {
+    vertical-align: middle;
+    height: 60px;
+    width: auto;
+  }
+}
+
+.body {
+  color: #444;
+  padding: 113px 12px 12px;
+  position: relative;
+  width: 100%;
+
+  .content {
+    calc('height', s('100vh - %s', 125px));
+  }
+
+  .sidebar {
+    margin: -12px;
+    width: 220px;
+  }
+
+  .content {
+    width: 100%;
+    padding-left: 232px;
+  }
+}
+
 .photo-list {
-  .photo-item img { height: 120px; width: auto; }
+  .photo-item {
+    padding: 12px;
+    cursor: pointer;
+    width: 25%;
+
+    .wrapper-card {
+      padding: 12px;
+      border: 1px solid #d7d7d7;
+      &:hover , &.active {
+        border-color: primaryColor;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
 }
