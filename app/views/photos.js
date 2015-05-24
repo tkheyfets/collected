@@ -2,7 +2,8 @@ import Ember from 'ember';
 import Photo from './photo';
 
 let EmptyView = Ember.View.extend({
-    templateName: 'empty-album'
+  templateName: 'empty-album',
+  classNames: ['empty-collection']
 });
 
 export default Ember.CollectionView.extend({

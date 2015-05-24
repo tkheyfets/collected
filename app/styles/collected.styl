@@ -1,52 +1,88 @@
 body {
   background-color: #f4f4f4;
   overflow: hidden;
+  font-family: 'Helvetica Neue', Helvetica, Georgia;
   * {
     box-sizing: border-box;
   }
-
 }
-.header {
+
+.sidebar {
+  height: 100vh;
   background-color: primaryColor;
-  padding: 12px;
+  float: left;
+  width: 240px;
+  box-shadow: inset -10px 0 25px 0 rgba(0,0,0,0.2);
   color: #fff;
-  border-bottom: 1px solid darkPrimaryColor;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
 
-  img {
-    vertical-align: middle;
-    height: 60px;
-    width: auto;
+  a.lead {
+    color: #fff;
+    text-decoration: none;
+    font-size: 60px;
+    opacity: .5;
+    trans(opacity, .25s);
+
+    &:hover { opacity: 1; }
+  }
+
+    .header {
+      padding: 24px 0 16px;
+      border-bottom: 1px solid darkPrimaryColor;
+    }
+}
+
+.container {
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 100vh;
+  padding-left: 240px;
+
+  .wrapper-main {
+    border-left: 1px solid #d7d7d7;
+  }
+
+}
+
+.header {
+
+  h1 {
+    color: #fff;
+    padding: 12px 0 24px;
+    margin: 0 12px;
+    border-bottom: 1px solid #d7d7d7;
+
+    img {
+      vertical-align: middle;
+      height: 60px;
+      width: auto;
+    }
   }
 }
 
-.body {
-  color: #444;
-  padding: 113px 12px 12px;
+.content {
+  calc('height', s('100vh - %s', 102px));
   position: relative;
-  width: 100%;
 
-  .content {
-    calc('height', s('100vh - %s', 125px));
-  }
-
-  .sidebar {
-    margin: -12px;
-    width: 220px;
-  }
-
-  .content {
+  .empty-collection {
+   position: absolute;
     width: 100%;
-    padding-left: 232px;
+    padding: 0 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    [class*="icon-"] {
+      font-size: 200px;
+      width: 200px;
+      height: 200px;
+      color: #d7d7d7;
+      margin: 0 auto 24px;
+      display: block;
+    }
   }
 }
 
 .photo-list {
+  padding: 12px 0;
   .photo-item {
     padding: 12px;
     cursor: pointer;
@@ -55,6 +91,7 @@ body {
     .wrapper-card {
       padding: 12px;
       border: 1px solid #d7d7d7;
+      trans(border-color, .25s);
       &:hover , &.active {
         border-color: primaryColor;
       }
@@ -63,6 +100,36 @@ body {
     img {
       max-width: 100%;
       height: auto;
+    }
+  }
+}
+
+
+.sidebar .card-item a {
+  display: block
+  width: 100%;
+  padding: 24px;
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  trans(background-color, .25s);
+  [class*="icon-"] {
+    position: absolute;
+    color: #fff;
+    font-size: 24px;
+    right: -24px;
+    top: 20px;
+    opacity: 0;
+    trans(all, .25s);
+  }
+
+  &.active, &:hover {
+    background-color: rgba(0,0,0,.25s);
+    [class*="icon-"] {
+      right: 12px;
+      opacity: 1;
     }
   }
 }

@@ -12,3 +12,9 @@ calc(property, expr) {
   {property}: s("-moz-calc(%s)", expr);
   {property}: s("calc(%s)", expr);
 }
+
+trans(property, duration) {
+    -webkit-transition: property duration ease-in-out;
+    -moz-transition: property duration ease-in-out;
+    transition: property duration ease-in-out;
+}
