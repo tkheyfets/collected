@@ -8,16 +8,13 @@ let Album = DS.Model.extend({
 Album.reopenClass({
   FIXTURES: [{
     id: 1,
-    name: 'NYC',
-    photos: []
+    name: 'NYC'
   }, {
     id: 2,
-    name: 'Animals',
-    photos: []
+    name: 'Animals'
   }, {
     id: 3,
-    name: 'Nature',
-    photos: []
+    name: 'Nature'
   }]
 });
 

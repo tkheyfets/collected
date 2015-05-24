@@ -11,11 +11,11 @@ Photo.reopenClass({
     {
       id: 1,
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1418.JPG',
-      album: null
+      album: 1
     }, {
       id: 2,
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1648.JPG',
-      album: null
+      album: 1
     }, {
       id: 3,
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1654.JPG',
@@ -115,7 +115,7 @@ Photo.reopenClass({
     }, {
       id: 27,
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2519.JPG',
-      album: null
+      album: 2
     }, {
       id: 28,
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2596.JPG',
@@ -139,7 +139,7 @@ Photo.reopenClass({
     }, {
       id: 33,
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2744.JPG',
-      album: null
+      album: 3
     }, {
       id: 34,
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2814.JPG',

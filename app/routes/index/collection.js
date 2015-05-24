@@ -3,13 +3,16 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   renderTemplate: function() {
-    this.render('photos', {
+    this.render({
       outlet: 'main',
-      controller: 'photos'
+      controller: 'photos',
+      model: this.modelFor('index.collection')
     });
   },
 
   model: function (params) {
-    return this.store.find('photo').filterBy('album', params.id);
+    return this.store.find('photo').then(function (data) {
+      return data.filterBy('album.id', params.id.toString());
+    });
   }
 });
