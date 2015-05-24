@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 
-var Photo = DS.Model.extend({
+let Photo = DS.Model.extend({
   url: DS.attr('string'),
   album: DS.belongsTo('album')
 });
@@ -10,106 +10,140 @@ Photo.reopenClass({
   FIXTURES : [
     {
       id: 1,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1418.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1418.JPG',
+      album: null
     }, {
       id: 2,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1648.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1648.JPG',
+      album: null
     }, {
       id: 3,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1654.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1654.JPG',
+      album: null
     }, {
       id: 4,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1655.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1655.JPG',
+      album: null
     }, {
       id: 5,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1666.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1666.JPG',
+      album: null
     }, {
       id: 6,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1667.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1667.JPG',
+      album: null
     }, {
       id: 7,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1668.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1668.JPG',
+      album: null
     }, {
       id: 8,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1669.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1669.JPG',
+      album: null
     }, {
       id: 9,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1681.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1681.JPG',
+      album: null
     }, {
       id: 10,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1683.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1683.JPG',
+      album: null
     }, {
       id: 11,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1685.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1685.JPG',
+      album: null
     }, {
       id: 12,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1745.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1745.JPG',
+      album: null
     }, {
       id: 13,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1851.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1851.JPG',
+      album: null
     }, {
       id: 14,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1878.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1878.JPG',
+      album: null
     }, {
       id: 15,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1905.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1905.JPG',
+      album: null
     }, {
       id: 16,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1964.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1964.JPG',
+      album: null
     }, {
       id: 17,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1975.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_1975.JPG',
+      album: null
     }, {
       id: 18,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2029.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2029.JPG',
+      album: null
     }, {
       id: 19,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2030.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2030.JPG',
+      album: null
     }, {
       id: 20,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2031.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2031.JPG',
+      album: null
     }, {
       id: 21,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2032.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2032.JPG',
+      album: null
     }, {
       id: 22,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2191.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2191.JPG',
+      album: null
     }, {
       id: 23,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2192.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2192.JPG',
+      album: null
     }, {
       id: 24,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2299.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2299.JPG',
+      album: null
     }, {
       id: 25,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2384.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2384.JPG',
+      album: null
     }, {
       id: 26,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2477.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2477.JPG',
+      album: null
     }, {
       id: 27,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2519.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2519.JPG',
+      album: null
     }, {
       id: 28,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2596.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2596.JPG',
+      album: null
     }, {
       id: 29,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2597.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2597.JPG',
+      album: null
     }, {
       id: 30,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2598.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2598.JPG',
+      album: null
     }, {
       id: 31,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2609.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2609.JPG',
+      album: null
     }, {
       id: 32,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2698.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2698.JPG',
+      album: null
     }, {
       id: 33,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2744.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2744.JPG',
+      album: null
     }, {
       id: 34,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2814.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2814.JPG',
+      album: null
     }]
 });
 

@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     });
   },
 
-  model: function () {
-    return this.store.find('photo');
+  model: function (params) {
+    return this.store.find('photo').filterBy('album', params.id);
   }
 });

@@ -9,5 +9,6 @@ let EmptyView = Ember.View.extend({
 export default Ember.CollectionView.extend({
   classNames: ['photo-list', 'u-cf'],
   emptyView: EmptyView,
+  content: null,
   itemViewClass: Photo
 });

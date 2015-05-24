@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-var Album = DS.Model.extend({
+let Album = DS.Model.extend({
   name: DS.attr(),
   photos: DS.hasMany('photo')
 });
@@ -8,13 +8,16 @@ var Album = DS.Model.extend({
 Album.reopenClass({
   FIXTURES: [{
     id: 1,
-    name: 'NYC'
+    name: 'NYC',
+    photos: []
   }, {
     id: 2,
-    name: 'Animals'
+    name: 'Animals',
+    photos: []
   }, {
     id: 3,
-    name: 'Nature'
+    name: 'Nature',
+    photos: []
   }]
 });
 
