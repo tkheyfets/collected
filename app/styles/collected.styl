@@ -91,9 +91,16 @@ body {
     .wrapper-card {
       padding: 12px;
       border: 1px solid #d7d7d7;
+      position: relative;
       trans(border-color, .25s);
       &:hover , &.active {
         border-color: primaryColor;
+      }
+
+      .actions {
+        position: absolute;
+        top: 0;
+        right: 0;
       }
     }
 

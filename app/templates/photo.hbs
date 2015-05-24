@@ -1,3 +1,10 @@
 <div class="wrapper-card">
     <img src="{{url}}" />
+  {{#if controller.appController.currentAlbum.name}}
+      <div class="actions">
+          <a href="#" {{action 'removeFromCollection' this}}>
+              <i class="icon-cancel"></i>
+          </a>
+      </div>
+  {{/if}}
 </div>

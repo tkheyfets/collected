@@ -3,16 +3,21 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   renderTemplate: function() {
+
+    let params = this.paramsFor('index.collection'),
+        appController = this.controllerFor('application'),
+        album = this.modelFor('index').findBy('id', params.id);
+
+    appController.set('currentAlbum', album);
+
     this.render({
       outlet: 'main',
       controller: 'photos',
-      model: this.modelFor('index.collection')
+      model: this.currentModel
     });
   },
 
   model: function (params) {
-    return this.store.find('photo').then(function (data) {
-      return data.filterBy('album.id', params.id.toString());
-    });
+    return this.modelFor('index').findBy('id', params.id).get('photos');
   }
 });
