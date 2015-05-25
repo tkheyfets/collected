@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   classNameBindings: ['notAlbum:u-hide'],
 
   notAlbum : function () {
-    return !this.get('album.name') && !this.get('album.photos').length;
+    return !this.get('album.name');
   }.property('album.name'),
 
   actions : {

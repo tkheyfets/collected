@@ -19,14 +19,17 @@ export default Ember.ArrayController.extend({
       this.transitionToRoute('index.collections');
     },
 
-    cleanCollection : function (album) {
-      album.get('photos').forEach(function(photo) {
-        if (!!photo) {
-          photo.get('albums').removeObject(album);
-          photo.save();
-        }
+    cleanCollection : function () {
+      let currentAlbum = this.get('currentAlbum'),
+          photos = this.get('currentAlbum.photos');
+
+      photos.forEach(function (photo) {
+        try {
+          photo.get('albums').removeObject(currentAlbum);
+        } catch(e){}
       });
-      album.save();
+
+      currentAlbum.save();
     }
   }
 });
