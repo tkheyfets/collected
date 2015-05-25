@@ -9,6 +9,9 @@ export default Ember.Controller.extend({
     },
     cleanCollection : function (album) {
       return this.get('controllers.photos').send('cleanCollection', album);
+    },
+    createCollection : function () {
+    	return this.get('controllers.photos').send('createCollection');
     }
   }
 });

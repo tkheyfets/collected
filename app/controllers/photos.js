@@ -8,6 +8,14 @@ export default Ember.ArrayController.extend({
   currentAlbum: Ember.computed.alias('appController.currentAlbum'),
 
   actions: {
+    createCollection : function () {
+       let name = prompt('Enter name for new collection');
+       if (name.trim()) {
+          var newCollection = this.get('store').createRecord('album', { name: name});
+          this.transitionToRoute('index.collection', newCollection.get('id'));
+       }
+    },
+
     removeFromCollection : function (photo) {     
       let currentAlbum  = this.get('currentAlbum');
       photo.get('albums').removeObject(currentAlbum);
