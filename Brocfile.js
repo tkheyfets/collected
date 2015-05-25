@@ -12,7 +12,6 @@ var app = new EmberApp({
   }
 });
 
-app.import('bower_components/bootstrap/js/tooltip.js');
 app.import('bower_components/bootstrap/js/modal.js');
 
 // Use `app.import` to add additional libraries to the generated

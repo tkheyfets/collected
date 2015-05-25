@@ -25,6 +25,22 @@ a {
   font-size: 0;
 }
 
+.sub-detail { font-size: 12px; }
+
+input[type="text"] {
+  border: 1px solid #787878;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+  trans(border-color, .25s);
+
+  &:focus, &:active {
+      border-color: primaryColor;
+  }
+}
+
 .btn {
   font-size: 14px;
   -webkit-appearance: none;
@@ -36,6 +52,13 @@ a {
 
   &:hover, &:focus {
     background-color: primaryColor;
+    outline: none;
+  }
+
+  [class*="icon-"] { 
+    font-size: 18px; 
+    position: relative;
+    top: 2px;
   }
 }
 
@@ -251,4 +274,47 @@ a {
       height: auto;
     }
   }
+}
+
+.modal-dialog {
+  width: 480px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+
+}
+
+.wrapper-modal-assign-photo {
+  .modal-body { height: 240px; }
+  .dropdown-collections {
+      position: relative;
+  }
+  .album-list { 
+      display: none; 
+      overflow-x: hidden;
+      overflow-y: auto;
+      margin-top: -14px;
+      border-radius: 0 0 4px 4px;
+      border: 1px solid darkPrimaryColor;
+      border-top:0;
+      width: 448px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      color: #444;
+      max-height: 140px;    
+      li { 
+        padding: 12px; 
+        cursor: pointer;
+        trans(background-color, .25s);
+        truncate();
+        &:hover {
+          background-color: #e7e7e7;
+        }
+        &.item-new { border-bottom: 1px solid #acacac;}
+      }
+  }
+  .collection-name:focus + .album-list { display: block; }
 }

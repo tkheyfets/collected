@@ -1,3 +1,27 @@
-{{#x-modal title='Assign photo to collections' ok='assignPhotoToCollection' close='removeModal'}}
-	Test collection
+{{#x-modal title='Assign photo to collection' ok='assignPhotoToCollection' close='removeModal'}}
+	{{#if model.albums.length}}
+		<h6>
+			<small>This photo is already in <strong>{{view.collectionList}}</strong></small>
+		</h6>
+	{{/if}}
+	{{#unless pickedCollection}}
+	<div class="dropdown-collections open">
+		{{input value=view.collectionName class="collection-name u-fw" placeholder="Enter collection name or choose from the list"}}
+		<ul class="u-reset album-list">
+			{{#if view.collectionName.length}}
+				<li {{action 'pickCollection' view.collectionName}} class="item-card item-new"><i class="icon-plus"></i> Create new <strong>{{view.collectionName}}</strong></li>
+			{{/if}}
+			{{#each album in view.freeCollections}}	
+				<li {{action 'pickCollection' album}} class="item-card">
+					<strong>{{album.name}}</strong>
+					<div class="sub-detail">{{pluralize album.photos.length 'photo' 'photos'}} in total</div>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	{{else}}
+	<p>
+		You have picked <strong>{{pickedCollection.name}}</strong>. Click to <a {{action 'undoPick'}} href="#">undo</a>?
+	</p>
+	{{/unless}}
 {{/x-modal}}

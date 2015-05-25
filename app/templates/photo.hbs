@@ -4,11 +4,15 @@
   {{else}}
         <img src="{{url}}" />
   {{/unless}}
-  {{#if controller.appController.currentAlbum.name}}
       <div class="actions">
+        {{#if controller.currentAlbum.name}}
           <a href="#" {{action 'removeFromCollection' this}}>
               <i class="icon-trashcan"></i>
           </a>
+        {{else}}
+          <a href="#" {{action 'showModal' 'modal-assign-photo' this}}>
+                <i class="icon-plus"></i>
+          </a>
+        {{/if}}
       </div>
-  {{/if}}
 </div>

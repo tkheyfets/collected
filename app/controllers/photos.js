@@ -6,12 +6,9 @@ export default Ember.ArrayController.extend({
 
   appController : Ember.computed.alias('controllers.application'),
   currentAlbum: Ember.computed.alias('appController.currentAlbum'),
+  albumList: Ember.computed.alias('appController.albumList'),
 
   actions: {
-
-    assignPhotoToCollection : function (photo, album) {
-        photo.get('albums').pushObject(album);
-    },
 
     createCollection : function () {
        let name = prompt('Enter name for new collection');

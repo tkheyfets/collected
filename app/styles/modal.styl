@@ -14,28 +14,31 @@
   outline: 0;
 }
 .modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform .3s ease-out;
-       -o-transition:      -o-transform .3s ease-out;
-          transition:         transform .3s ease-out;
-  -webkit-transform: translate(0, -25%);
-      -ms-transform: translate(0, -25%);
-       -o-transform: translate(0, -25%);
-          transform: translate(0, -25%);
+  -webkit-transition: all .3s ease-out;
+       -o-transition: all .3s ease-out;
+          transition: all .3s ease-out;
+  -webkit-transform: translate(-50%, -25%);
+      -ms-transform: translate(-50%, -25%);
+       -o-transform: translate(-50%, -25%);
+          transform: translate(-50%, -25%);
+  position: absolute;
+  top: 0;
+
 }
 .modal.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-       -o-transform: translate(0, 0);
-          transform: translate(0, 0);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
 }
 .modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto;
 }
 .modal-dialog {
-  position: relative;
-  width: auto;
-  margin: 10px;
+  position: absolute;
+  width: 480px;;
 }
 .modal-content {
   position: relative;
@@ -67,13 +70,27 @@
 .modal-header {
   min-height: 16.42857143px;
   padding: 15px;
+  position: relative;
   border-bottom: 1px solid #e5e5e5;
 }
 .modal-header .close {
-  margin-top: -2px;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    border: 0;
+    background: none;
+    font-size: 32px;
+    color: #787878;
+    trans(color, .25s);
+    &:hover {
+      color: #444;
+    }
 }
 .modal-title {
   margin: 0;
+  font-size: 28px;
+  font-weight: 400;
   line-height: 1.42857143;
 }
 .modal-body {
@@ -84,6 +101,8 @@
   padding: 15px;
   text-align: right;
   border-top: 1px solid #e5e5e5;
+
+  .btn { min-width: 120px;}
 }
 .modal-footer .btn + .btn {
   margin-bottom: 0;

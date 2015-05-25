@@ -7,7 +7,8 @@ export default Ember.Route.extend({
   },
 
   beforeModel : function () {
-    return this.store.find('album').then(function () {
+    return this.store.find('album').then(function (data) {
+      this.controllerFor('application').set('albumList', data);
       return this.store.find('photo');
     }.bind(this));
   },

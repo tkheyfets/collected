@@ -7,7 +7,13 @@ let EmptyView = Ember.View.extend({
 
 let PhotoView =  Ember.View.extend({
   classNames: ['photo-item', 'u-left'],
-  templateName: 'photo'
+  templateName: 'photo',
+  pairedModel : function () {
+  	return Ember.Object.create({
+  		photo: this.get('content'),
+  		albumList: this.get('controller.albumList')
+  	});
+  }.property('content', 'controller.albumList.@each')
 });
 
 
