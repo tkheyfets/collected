@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 
     let appController = this.controllerFor('application');
 
-    appController.set('currentAlbum', {photos: this.currentModel});
+    appController.set('currentAlbum', { photos: this.currentModel });
 
     this.render('photos', {
       templateName: 'photos',

@@ -10,11 +10,15 @@ export default Ember.Component.extend({
 
   actions : {
     remove: function (album) {
-      this.sendAction('remove', album);
+      if (confirm('Are you certain that you want to remove %@?'.fmt(album.get('name')))) {
+        this.sendAction('remove', album);
+      }
     },
 
     clean: function (album) {
-      this.sendAction('clean', album);
+      if (confirm('Are you certain that you want to remove all photos from %@?'.fmt(album.get('name')))) {
+         this.sendAction('clean', album);
+      }
     }
   }
 

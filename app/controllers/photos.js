@@ -8,10 +8,9 @@ export default Ember.ArrayController.extend({
   currentAlbum: Ember.computed.alias('appController.currentAlbum'),
 
   actions: {
-    removeFromCollection : function (photo) {
-      let currentAlbum = this.get('currentAlbum');
+    removeFromCollection : function (photo) {     
+      let currentAlbum  = this.get('currentAlbum');
       photo.get('albums').removeObject(currentAlbum);
-      photo.save();
     },
 
     removeCollection : function (album) {
@@ -20,16 +19,13 @@ export default Ember.ArrayController.extend({
     },
 
     cleanCollection : function () {
-      let currentAlbum = this.get('currentAlbum'),
-          photos = this.get('currentAlbum.photos');
-
-      photos.forEach(function (photo) {
-        try {
-          photo.get('albums').removeObject(currentAlbum);
-        } catch(e){}
-      });
-
-      currentAlbum.save();
+      let currentAlbum = this.get('currentAlbum');
+      var photo = currentAlbum.get('photos.firstObject'); 
+      
+      while (!!photo) {
+        this.send('removeFromCollection', photo);
+        photo = currentAlbum.get('photos.firstObject');
+      }
     }
   }
 });
