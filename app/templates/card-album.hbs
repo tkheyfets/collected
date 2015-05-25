@@ -1,1 +1,4 @@
-{{#link-to 'index.collection' id}}{{name}} <i class="icon-pictures3"></i>{{/link-to}}
+{{#link-to 'index.collection' id}}
+	{{name}} <i class="icon-pictures3"></i>
+	<div class="sub-detail">{{pluralize photos.length 'photo' 'photos'}} in total</div>
+{{/link-to}}
