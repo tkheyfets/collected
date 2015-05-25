@@ -6,11 +6,18 @@ export default Ember.Route.extend({
       this.render('sidebar', { outlet: 'sidebar'});
   },
 
-  model: function () {
-    return this.store.find('album');
+  beforeModel : function () {
+    return this.store.find('album').then(function () {
+      return this.store.find('photo');
+    }.bind(this))
   },
 
-  afterModel : function () {
+  model: function () {
+    return this.store.all('album');
+  },
+
+  redirect: function() {
     this.transitionTo('index.collections');
   }
+
 });

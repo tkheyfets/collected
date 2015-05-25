@@ -15,8 +15,9 @@
                 {{x-summary album=controller.currentAlbum}}
             </h1>
         </header>
-        {{x-actions album=controller.currentAlbum}}
+        {{x-actions remove="removeCollection"
+                    clean="cleanCollection"
+                    album=controller.currentAlbum}}
         <div class="content u-scrollable">{{outlet}}</div>
-
     </div>
 </section>

@@ -1,6 +1,6 @@
 {{#if album.name}}
     <div class="btn-group u-fh">
-        <button class="btn"><i class="icon-cancel2"></i> Remove</button>
-        <button class="btn"><i class="icon-trashcan"></i> Clean</button>
+        <button {{action 'remove' album}} class="btn"><i class="icon-cancel2"></i> Remove</button>
+        <button {{action 'clean' album}} class="btn"><i class="icon-trashcan"></i> Clean</button>
     </div>
 {{/if}}

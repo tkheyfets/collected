@@ -9,8 +9,8 @@ Router.map(function() {
   this.route('index', { path: '/' }, function () {
     this.route('collections');
     this.route('collection', { path: '/collections/:id'});
-
   });
+
 });
 
 export default Router;

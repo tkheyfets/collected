@@ -5,8 +5,8 @@ export default Ember.Route.extend({
   renderTemplate: function() {
 
     let params = this.paramsFor('index.collection'),
-      appController = this.controllerFor('application'),
-      album = this.modelFor('index').findBy('id', params.id);
+        appController = this.controllerFor('application'),
+        album = this.modelFor('index').findBy('id', params.id);
 
     appController.set('currentAlbum', album);
 
@@ -19,7 +19,7 @@ export default Ember.Route.extend({
 
   model: function (params) {
     return this.modelFor('index.collections').filter(function (photo) {
-      return photo.get('albums').getEach('id').contains(params.id);
-    });
+        return photo.get('albums').getEach('id').contains(params.id);
+      });
   }
 });

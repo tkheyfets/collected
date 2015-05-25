@@ -9,9 +9,24 @@ export default Ember.ArrayController.extend({
 
   actions: {
     removeFromCollection : function (photo) {
-
       let currentAlbum = this.get('currentAlbum');
-      currentAlbum.get('photos').removeObject(photo).save();
+      photo.get('albums').removeObject(currentAlbum);
+      photo.save();
+    },
+
+    removeCollection : function (album) {
+      album.deleteRecord();
+      this.transitionToRoute('index.collections');
+    },
+
+    cleanCollection : function (album) {
+      album.get('photos').forEach(function(photo) {
+        if (!!photo) {
+          photo.get('albums').removeObject(album);
+          photo.save();
+        }
+      });
+      album.save();
     }
   }
 });
