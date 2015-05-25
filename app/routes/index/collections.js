@@ -3,20 +3,19 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   renderTemplate: function() {
-    let appController = this.controllerFor('application'),
-        album = this.store.all('photo');
 
-    appController.set('currentAlbum', { photos: album });
+    let appController = this.controllerFor('application');
 
-    this.render({
-      outlet: 'main',
+    appController.set('currentAlbum', {photos: this.currentModel});
+
+    this.render('photos', {
+      templateName: 'photos',
       controller: 'photos',
       model: this.currentModel
     });
   },
 
   model: function () {
-
     return this.store.find('photo');
   }
 });

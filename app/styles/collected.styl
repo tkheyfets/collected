@@ -7,6 +7,31 @@ body {
   }
 }
 
+
+a {
+  color: primaryColor;
+  text-decoration: none;
+  &:hover { color: darkPrimaryColor; }
+}
+
+.btn-group {
+  font-size: 0;
+}
+
+.btn {
+  font-size: 14px;
+  -webkit-appearance: none;
+  padding: 8px;
+  background-color: darkPrimaryColor;
+  border:0;
+  color: #fff;
+  trans(all, .25s);
+
+  &:hover, &:focus {
+    background-color: primaryColor;
+  }
+}
+
 .sidebar {
   height: 100vh;
   background-color: primaryColor;
@@ -22,13 +47,61 @@ body {
     opacity: .5;
     trans(opacity, .25s);
 
-    &:hover { opacity: 1; }
+    &:hover, &.active { opacity: 1; }
   }
 
   .header {
-    padding: 24px 0 16px;
+    padding: 12px 0 16px;
     border-bottom: 1px solid darkPrimaryColor;
   }
+
+  .card-item a {
+    display: block
+    width: 100%;
+    padding: 24px;
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    trans(background-color, .25s);
+    [class*="icon-"] {
+      position: absolute;
+      color: #fff;
+      font-size: 24px;
+      right: -24px;
+      top: 20px;
+      opacity: 0;
+      trans(all, .25s);
+    }
+
+    &.active, &:hover {
+      background-color: rgba(0,0,0,.25s);
+      [class*="icon-"] {
+        right: 12px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .album-list {
+    calc('height', s('100vh - %s', 142px));
+    position: relative;
+  }
+
+  .btn {
+    display: block;
+    color: #fff;
+    width: 100%;
+    -webkit-appearance: none;
+    padding: 12px;
+    background-color: rgba(0,0,0,.4);
+    border: 0;
+    trans(background-color, .25s);
+
+    &:hover, &:focus { background-color: rgba(0,0,0,.2); }
+  }
+
 }
 
 .container {
@@ -40,27 +113,49 @@ body {
   .wrapper-main {
     border-left: 1px solid #d7d7d7;
   }
+}
+
+.panel {
+  padding: 24px 12px;
+
+  background-color: #e7e7e7;
+  position: relative;
+
+  .sub-detail {
+    font-size: 12px;
+    color: #787878;
+    letter-spacing: 0;
+  }
+
+  .toolbar {
+    font-size: 16px;
+    font-weight: 300;
+  }
 
 }
+
 
 .header {
 
   h1 {
-    color: #fff;
-    padding: 12px 0 24px;
-    margin: 0 12px;
     border-bottom: 1px solid #d7d7d7;
+    position: relative;
 
     img {
-      vertical-align: middle;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 24px;
+      z-index: 2;
       height: 60px;
       width: auto;
     }
   }
+
 }
 
 .content {
-  calc('height', s('100vh - %s', 102px));
+  calc('height', s('100vh - %s', 132px));
   position: relative;
 
   .empty-collection {
@@ -81,6 +176,10 @@ body {
   }
 }
 
+.u-hide + .content {
+  calc('height', s('100vh - %s', 100px));
+}
+
 .photo-list {
   padding: 12px 0;
   .photo-item {
@@ -93,14 +192,46 @@ body {
       border: 1px solid #d7d7d7;
       position: relative;
       trans(border-color, .25s);
-      &:hover , &.active {
-        border-color: primaryColor;
-      }
+
 
       .actions {
         position: absolute;
         top: 0;
         right: 0;
+        opacity: 0;
+        trans(opacity, .25s);
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 20px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          [class*="icon-"] {
+            top: 4px;
+            right: 4px;
+            position: absolute;
+            z-index:2;
+          }
+          &:before {
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 48px solid darkPrimaryColor;
+            border-left: 48px solid transparent;
+          }
+        }
+      }
+
+      &:hover , &.active {
+        border-color: primaryColor;
+        .actions { opacity: 1; }
       }
     }
 
@@ -111,49 +242,19 @@ body {
   }
 }
 
+.panel.album-actions {
+  padding: 0;
+  height: 42px;
+  bottom: 0;
+  left: 240px;
+  right: 0;
+  position: absolute;
+  text-align: right;
 
-.sidebar .card-item a {
-  display: block
-  width: 100%;
-  padding: 24px;
-  color: #fff;
-  text-decoration: none;
-  background-color: transparent;
-  overflow: hidden;
-  position: relative;
-  trans(background-color, .25s);
-  [class*="icon-"] {
-    position: absolute;
-    color: #fff;
-    font-size: 24px;
-    right: -24px;
-    top: 20px;
-    opacity: 0;
-    trans(all, .25s);
+  .btn {
+    font-size: 16px;
+    padding: 12px;
+    height: 100%;
+    width: 120px;
   }
-
-  &.active, &:hover {
-    background-color: rgba(0,0,0,.25s);
-    [class*="icon-"] {
-      right: 12px;
-      opacity: 1;
-    }
-  }
-}
-
-.sidebar .album-list {
-  calc('height', s('100vh - %s', 154px));
-  position: relative;
-}
-
-.sidebar .btn {
-  display: block;
-  width: 100%;
-  -webkit-appearance: none;
-  padding: 12px;
-  background-color: rgba(0,0,0,.4);
-  border: 0;
-  trans(background-color, .25s);
-
-  &:hover, &:focus { background-color: rgba(0,0,0,.2); }
 }

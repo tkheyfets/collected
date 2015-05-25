@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'img-src': "'self' https://s3-us-west-2.amazonaws.com"
+    },
     modulePrefix: 'collected',
     environment: environment,
     baseURL: '/',

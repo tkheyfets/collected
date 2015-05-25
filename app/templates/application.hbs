@@ -1,6 +1,6 @@
 <section class="sidebar">
     <div class="header u-txtc">
-        {{#link-to "index.home" class="lead"}}<i class="icon-image"></i>{{/link-to}}
+        {{#link-to "index.collections" class="lead"}}<i class="icon-pictures"></i>{{/link-to}}
     </div>
     {{outlet 'sidebar'}}
     <div class="actions">
@@ -10,11 +10,13 @@
 <section class="container">
     <div class="wrapper-main">
         <header class="header">
-            <h1 class="u-txtc">
+            <h1>
                 <img alt="Collected" src="/assets/img/brand.svg" />
+                {{x-summary album=controller.currentAlbum}}
             </h1>
-            {{x-summary album=controller.currentAlbum}}
         </header>
-        <div class="content u-scrollable">{{outlet 'main'}}</div>
+        {{x-actions album=controller.currentAlbum}}
+        <div class="content u-scrollable">{{outlet}}</div>
+
     </div>
 </section>

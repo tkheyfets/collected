@@ -11,6 +11,6 @@ export default Ember.Route.extend({
   },
 
   afterModel : function () {
-    this.transitionTo('index.home');
+    this.transitionTo('index.collections');
   }
 });

@@ -1,11 +1,4 @@
-<div class="panel">
-    {{#unless album.name}}
-        <div class="title">All | {{album.photos.length}} photos</div>
-    {{else}}
-        <div class="title">{{album.name}} | {{album.photos.length}} photos</div>
-        <div class="toolbar">
-            <button class="btn"><i class="icon-cancel"></i> Clean collection</button>
-        </div>
-    {{/unless}}
-
-</div>
+<h4 class="title">
+  {{if album.name album.name 'All'}}
+    <span class="sub-detail"> / {{pluralize album.photos.length 'photo' 'photos'}} in total</span>
+</h4>

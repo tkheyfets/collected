@@ -12,7 +12,6 @@ let AlbumItemView = Ember.View.extend({
 export default Ember.CollectionView.extend({
   classNames: ['u-reset', 'album-list', 'u-scrollable'],
   tagName: 'ul',
-  content: null,
   emptyView: EmptyView,
   itemViewClass: AlbumItemView
 });

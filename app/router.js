@@ -7,8 +7,9 @@ let Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('index', { path: '/' }, function () {
-    this.route('home');
+    this.route('collections');
     this.route('collection', { path: '/collections/:id'});
+
   });
 });
 
