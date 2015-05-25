@@ -1,9 +1,13 @@
 <div class="wrapper-card">
-    <img src="{{url}}" />
+  {{#unless controller.currentAlbum.name}}
+  		<img {{action 'showModal' 'modal-assign-photo' this}} src="{{url}}" />
+  {{else}}
+        <img src="{{url}}" />
+  {{/unless}}
   {{#if controller.appController.currentAlbum.name}}
       <div class="actions">
           <a href="#" {{action 'removeFromCollection' this}}>
-              <i class="icon-cancel"></i>
+              <i class="icon-trashcan"></i>
           </a>
       </div>
   {{/if}}

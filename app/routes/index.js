@@ -9,7 +9,7 @@ export default Ember.Route.extend({
   beforeModel : function () {
     return this.store.find('album').then(function () {
       return this.store.find('photo');
-    }.bind(this))
+    }.bind(this));
   },
 
   model: function () {
@@ -19,5 +19,4 @@ export default Ember.Route.extend({
   redirect: function() {
     this.transitionTo('index.collections');
   }
-
 });

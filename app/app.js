@@ -7,6 +7,10 @@ var App;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
+Ember.LinkView.reopen({
+  attributeBindings: ['data-title']
+});
+
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   Resolver: Resolver

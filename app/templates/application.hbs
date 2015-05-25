@@ -12,12 +12,13 @@
         <header class="header">
             <h1>
                 <img alt="Collected" src="/assets/img/brand.svg" />
-                {{x-summary album=controller.currentAlbum}}
+                {{x-summary album=controller.currentAlbum
+                            remove="removeCollection"
+                            clean="cleanCollection"}}
             </h1>
         </header>
-        {{x-actions remove="removeCollection"
-                    clean="cleanCollection"
-                    album=controller.currentAlbum}}
         <div class="content u-scrollable">{{outlet}}</div>
     </div>
 </section>
+{{outlet 'modal'}}
+<div class="container-tooltips"></div>

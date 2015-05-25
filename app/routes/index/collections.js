@@ -10,8 +10,7 @@ export default Ember.Route.extend({
 
     this.render('photos', {
       templateName: 'photos',
-      controller: 'photos',
-      model: this.currentModel
+      controller: 'photos'
     });
   },
 

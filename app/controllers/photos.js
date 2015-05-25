@@ -8,6 +8,11 @@ export default Ember.ArrayController.extend({
   currentAlbum: Ember.computed.alias('appController.currentAlbum'),
 
   actions: {
+
+    assignPhotoToCollection : function (photo, album) {
+        photo.get('albums').pushObject(album);
+    },
+
     createCollection : function () {
        let name = prompt('Enter name for new collection');
        if (name.trim()) {
