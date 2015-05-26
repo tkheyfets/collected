@@ -316,5 +316,15 @@ input[type="text"] {
         &.item-new { border-bottom: 1px solid #acacac;}
       }
   }
-  .collection-name:focus + .album-list { display: block; }
+  .dropdown-collections {
+    .btn {
+      position: absolute;
+      top: 18px;
+      right: 8px;
+      padding: 4px;
+      border-radius: 4px;
+    }
+    
+    &.open .album-list { display: block; }
+  }
 }

@@ -17,6 +17,7 @@ export default Ember.Controller.extend({
 	        this.get('model.albums').pushObject(album);
 	        this.transitionToRoute('index.collection', album.get('id'));
 		},
+
 		pickCollection : function (album) {
 			if (typeof album === 'string') {
 				album = { name: album };
