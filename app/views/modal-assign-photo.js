@@ -8,34 +8,41 @@ export default Ember.View.extend({
 
   _hideDropdown : function () {
       Ember.run.later(this, function () {
-         this.$('.dropdown-collections').removeClass('open');
+        let $dropdown = this.$('.dropdown-collections');
+        if ($dropdown) {
+           $dropdown.removeClass('open');
+        }
       }.bind(this), 250);      
   },
 
   pickedCollectionHasChanged : function () {
       if (!this.get('controller.pickedCollection')) {
         Ember.run.later(this, function () {
-          this.$('input.collection-name').trigger('focus');
+          this.didInsertElement.call(this);
         }.bind(this), 50);    
         
       }
   }.observes('controller.pickedCollection'),
 
   didInsertElement : function () {
-    this.$('input.collection-name')
-        .on('focus', this._showDropdown.bind(this))
-        .on('blur', this._hideDropdown.bind(this))
-        .trigger('focus');
+    let $input = this.$('input.collection-name');
+    
+    if (!!$input) {
+        $input.on('focus', this._showDropdown.bind(this))
+              .on('blur', this._hideDropdown.bind(this))
+              .trigger('focus');
+    }
   },
 
   willDestroyElement : function () {
-      this.$('input.collection-name')
+
+    this.$('input.collection-name')
         .off('focus', this._showDropdown.bind(this))
         .off('blus', this._hideDropdown.bind(this));
 
-      this.removeObserver('controller.pickedCollection', this, this.pickedCollectionHasChanged);
-      this.set('controller.pickedCollection', null);
 
+    this.removeObserver('controller.pickedCollection', this, this.pickedCollectionHasChanged);
+    this.set('controller.pickedCollection', null);
   },
 
   classNames: ['wrapper-modal-assign-photo'],

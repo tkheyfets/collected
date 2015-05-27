@@ -8,19 +8,22 @@ export default Ember.Controller.extend({
 			 let albumID = this.get('pickedCollection.id'),
 	             album = this.get('pickedCollection');
 
-	        if (!albumID) {
-	          album = this.get('store').createRecord('album', album);
-	        }
+	        if (!!album) {
 
-	        this.send('undoPick');
+		        if (!albumID ) {
+		          album = this.get('store').createRecord('album', { name: album.get('name')});
+		        }
 
-	        this.get('model.albums').pushObject(album);
-	        this.transitionToRoute('index.collection', album.get('id'));
+			    this.send('undoPick');
+			    this.get('model.albums').pushObject(album);
+			    this.transitionToRoute('index.collection', album.get('id'));
+		    }
 		},
 
 		pickCollection : function (album) {
-			if (typeof album === 'string') {
-				album = { name: album };
+			if (typeof album === 'string' ) {
+				let name = album;
+				album = Ember.Object.create().set('name', name);
 			}
 
 			this.set('pickedCollection', album);
