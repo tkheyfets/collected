@@ -14,7 +14,7 @@
 	{{#unless pickedCollection}}
 	<div class="dropdown-collections">
 		{{input value=view.collectionName class="collection-name u-fw" 
-			    placeholder="Start typing to create new collection or pick from the list'"}}
+			    placeholder="Start typing to create new collection or pick from the list"}}
 		{{#if view.trimmedCollectionName.length}}
 			<button {{action 'pickCollection' view.trimmedCollectionName}} class="btn">
 				<i class="icon-plus"></i> Create

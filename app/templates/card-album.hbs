@@ -1,4 +1,7 @@
-{{#link-to 'index.collection' id}}
-	{{name}} <i class="icon-pictures3"></i>
-	<div class="sub-detail">{{pluralize photos.length 'photo' 'photos'}} in total</div>
+{{#link-to 'collection' id class="u-cf"}}
+	{{#if photos.length}}<img class="u-left" src="{{photos.lastObject.url}}" />{{else}}<i class="icon-picture u-left"></i>{{/if}}
+	<div class="caption">
+		{{name}} <i class="icon-pictures3"></i>
+		<div class="sub-detail">{{pluralize photos.length 'photo' 'photos'}} in total</div>
+	</div>
 {{/link-to}}

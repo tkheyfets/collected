@@ -4,11 +4,18 @@ export default Ember.Route.extend({
 
   renderTemplate: function() {
 
-    let params = this.paramsFor('index.collection'),
+    let params = this.paramsFor('collection'),
         appController = this.controllerFor('application'),
-        album = this.modelFor('index').findBy('id', params.id);
+        album = this.store.all('album').findBy('id', params.id);
 
     appController.set('currentAlbum', album);
+
+    this.render('sidebar', { 
+      outlet: 'sidebar',
+      controller: 'application',
+      into: 'application',
+      model: this.store.all('album')
+    });
 
     this.render('photos', {
       templateName: 'photos',
@@ -17,7 +24,7 @@ export default Ember.Route.extend({
   },
 
   model: function (params) {
-    return this.modelFor('index.collections').filter(function (photo) {
+    return this.modelFor('collections').filter(function (photo) {
         return photo.get('albums').getEach('id').contains(params.id);
       });
   }

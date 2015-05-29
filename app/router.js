@@ -6,10 +6,13 @@ let Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-	this.route('index', { path: '/'}, function () {
-	    this.route('collections');
-	    this.route('collection', { path: '/collections/:id'});
-    });
+	this.route('collections', { path : '/' });
+	this.route('collection', { path: '/collections/:id'});
+	
+	// this.route('index', { path: '/'}, function () {
+	//     this.route('collections');
+	//     this.route('collection', { path: '/collections/:id'});
+ 	// });
 });
 
 export default Router;

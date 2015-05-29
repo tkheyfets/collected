@@ -1,10 +1,19 @@
 <section class="sidebar">
-    <div class="header u-txtc">
-        {{#link-to "index.collections" class="lead"}}<i class="icon-pictures"></i>{{/link-to}}
+    <div class="header">
+        {{#link-to "collections" class="lead u-cf"}}
+            <i class="icon-pictures u-left"></i>
+            <div class="caption">
+                All
+                <div class="sub-detail">{{pluralize photosAmount 'photo' 'photos'}} in total</div>
+            </div>
+        {{/link-to}}
     </div>
     {{outlet 'sidebar'}}
     <div class="actions">
-        <button class="btn" {{action 'createCollection'}}><i class="icon-plus"></i> New collection</button>
+        <button class="btn" {{action 'createCollection'}}>
+            <i class="icon-plus u-left"></i> 
+            <div class="caption">New collection</div>
+        </button>
     </div>
 </section>
 <section class="container">

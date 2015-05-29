@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
 
 			    this.send('undoPick');
 			    this.get('model.albums').pushObject(album);
-			    this.transitionToRoute('index.collection', album.get('id'));
+			    this.transitionToRoute('collection', album.get('id'));
 		    }
 		},
 
