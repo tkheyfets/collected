@@ -3,7 +3,10 @@
 		<small>
 			{{#if pickedCollection}}
 				You have picked:
-				<a class="sub-detail" {{action 'undoPick'}} href="#">undo</a>
+				<a class="sub-detail u-txtc" {{action 'undoPick'}} href="#">
+					<i class="icon-reply"></i><br/>
+					undo
+				</a>
 			{{else}}
 				{{#if model.albums.length}}
 					This photo is already in <strong>{{view.collectionList}}</strong>
