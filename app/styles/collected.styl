@@ -261,8 +261,10 @@ input[type="text"] {
 
       .actions {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
         opacity: 0;
         trans(opacity, .25s);
 
@@ -270,26 +272,15 @@ input[type="text"] {
           color: #fff;
           text-decoration: none;
           font-size: 20px;
-          position: absolute;
-          top: 0;
-          right: 0;
+          background-color: primaryColor;
+          border: 1px solid darkPrimaryColor;
+          border-radius: 4px;
+          padding: 14px 12px 12px;
           [class*="icon-"] {
-            top: 4px;
-            right: 4px;
-            position: absolute;
-            z-index:2;
-          }
-          &:before {
-            z-index: 1;
-            position: absolute;
-            top: 0;
-            right: 0;
-            display: block;
-            content: '';
-            width: 0;
-            height: 0;
-            border-top: 48px solid darkPrimaryColor;
-            border-left: 48px solid transparent;
+            font-size: 24px;
+            width: 24px;
+            height: 24px;
+            line-height: 48px;
           }
         }
       }
@@ -297,6 +288,15 @@ input[type="text"] {
       &:hover , &.active {
         border-color: primaryColor;
         .actions { opacity: 1; }
+      }
+
+      &[data-type="collection-photo"] {
+          a { 
+            background-color: dangerColor;
+            border-color: darkDangerColor;
+          }
+
+          &:hover , &.active { border-color: dangerColor; }
       }
     }
 
