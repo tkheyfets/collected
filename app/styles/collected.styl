@@ -77,6 +77,9 @@ input[type="text"] {
   width: 240px;
   box-shadow: inset -10px 0 25px 0 rgba(0,0,0,0.2);
   color: #fff;
+  overflow: hidden;
+
+  trans(width, .25s);
 
   a.lead {
     color: #fff;
@@ -94,8 +97,20 @@ input[type="text"] {
         height: 48px;
     }
 
-    .caption { padding: 0 0 0 60px; }
+    .caption { padding: 0 0 0 60px; }   
   }
+
+  > * { width: 240px; }
+  + .container { 
+    padding-left: 240px; 
+    trans(padding-left, .25s);
+  }
+
+  &.collapsed { 
+    width: 72px; 
+    + .container { padding-left: 72px;}
+  }
+
 
   .header {
     padding: 26px 0 24px 12px;
@@ -182,7 +197,6 @@ input[type="text"] {
   background-color: #f7f7f7;
   width: 100%;
   height: 100vh;
-  padding-left: 240px;
 
   .wrapper-main {
     border-left: 1px solid #d7d7d7;

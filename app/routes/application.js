@@ -12,14 +12,13 @@ export default Ember.Route.extend({
       this.transitionTo('collections.index');
   },
 
-  setupController: function (controller, model) {
+  setupController: function (controller) {
     controller.set('albumList', this.store.all('album'))
               .set('photosAmount', this.store.all('photo').get('length'));
   },
 
 	actions : {
      showModal : function (name, model) {
-      console.log(model.get('name'));
       return this.render(name, {
         into: 'application',
         outlet: 'modal',
