@@ -69,7 +69,8 @@ Photo.reopenClass({
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2030.JPG'
     }, {
       id: 20,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2031.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2031.JPG',
+      albums: [1, 2]
     }, {
       id: 21,
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2032.JPG'
@@ -90,30 +91,33 @@ Photo.reopenClass({
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2477.JPG'
     }, {
       id: 27,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2519.JPG',
-      albums: [2]
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2519.JPG'
     }, {
       id: 28,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2596.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2596.JPG',
+      albums: [3]
     }, {
       id: 29,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2597.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2597.JPG',
+      albums: [3]
     }, {
       id: 30,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2598.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2598.JPG',
+      albums: [3]
     }, {
       id: 31,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2609.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2609.JPG',
+      albums: [3]
     }, {
       id: 32,
       url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2698.JPG'
     }, {
       id: 33,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2744.JPG',
-      albums: [3, 2]
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2744.JPG'
     }, {
       id: 34,
-      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2814.JPG'
+      url: 'https://s3-us-west-2.amazonaws.com/collected-1-nyc/assets/IMG_2814.JPG',
+      albums: [1, 2]
     }]
 });
 

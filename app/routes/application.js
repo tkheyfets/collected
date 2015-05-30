@@ -3,24 +3,23 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   beforeModel : function () {
-    return this.store.find('album').then(function (albums) {
-      this.controllerFor('application').set('albumList', albums);
-      return this.store.find('photo').then(function (photos) {
-          this.controllerFor('application').set('photosAmount', photos.get('length'));
-      }.bind(this));
+    return this.store.find('album').then(function () {
+      return this.store.find('photo');
     }.bind(this));
   },
 
-  model : function () {
-      return this.store.all('album');
+  redirect : function () {
+      this.transitionTo('collections.index');
   },
 
-  redirect : function () {
-      this.transitionTo('collections');
+  setupController: function (controller, model) {
+    controller.set('albumList', this.store.all('album'))
+              .set('photosAmount', this.store.all('photo').get('length'));
   },
 
 	actions : {
      showModal : function (name, model) {
+      console.log(model.get('name'));
       return this.render(name, {
         into: 'application',
         outlet: 'modal',

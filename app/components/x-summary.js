@@ -6,7 +6,11 @@ export default Ember.Component.extend({
   isAlbum : function () {
     return !!this.get('album.name');
   }.property('album.name'),
+
   actions : {
+    showModal : function (name, model) {
+        this.sendAction('showModal', name, model);
+    },
     remove: function (album) {
       if (confirm('Are you certain that you want to remove %@?'.fmt(album.get('name')))) {
         this.sendAction('remove', album);

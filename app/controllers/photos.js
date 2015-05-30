@@ -14,7 +14,7 @@ export default Ember.ArrayController.extend({
        let name = prompt('Enter name for new collection');
        if (name.trim()) {
           var newCollection = this.get('store').createRecord('album', { name: name});
-          this.transitionToRoute('collection', newCollection.get('id'));
+          this.transitionToRoute('collections.single', newCollection.get('id'));
        }
     },
 
@@ -25,7 +25,7 @@ export default Ember.ArrayController.extend({
 
     removeCollection : function (album) {
       album.deleteRecord();
-      this.transitionToRoute('collections');
+      this.transitionToRoute('collections.index');
     },
 
     cleanCollection : function () {

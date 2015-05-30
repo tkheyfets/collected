@@ -10,8 +10,8 @@
             </div>
             <div class="modal-footer">
               <div class="btn-group">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" {{action 'ok'}}>OK</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{#if cancelTitle}}{{cancelTitle}}{{else}}Cancel{{/if}}</button>
+                <button disabled={{notReady}} type="button" class="btn btn-primary" {{action 'ok'}}>{{#if okTitle}}{{okTitle}}{{else}}OK{{/if}}</button>
               </div>
             </div>
           </div>

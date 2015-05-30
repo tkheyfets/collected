@@ -1,6 +1,6 @@
 <section class="sidebar">
     <div class="header">
-        {{#link-to "collections" class="lead u-cf"}}
+        {{#link-to "collections.index" class="lead u-cf"}}
             <i class="icon-pictures u-left"></i>
             <div class="caption">
                 All
@@ -11,7 +11,7 @@
     {{outlet 'sidebar'}}
     <div class="actions">
         <button class="btn" {{action 'createCollection'}}>
-            <i class="icon-plus u-left"></i> 
+            <i class="icon-plus2 u-left"></i> 
             <div class="caption">New collection</div>
         </button>
     </div>
@@ -22,6 +22,7 @@
             <h1>
                 <img alt="Collected" src="/assets/img/brand.svg" />
                 {{x-summary album=controller.currentAlbum
+                            showModal="showModal"
                             remove="removeCollection"
                             clean="cleanCollection"}}
             </h1>

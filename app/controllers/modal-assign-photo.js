@@ -3,6 +3,9 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 	needs: ['application'],
 
+	notReady : function () {
+		return !this.get('pickedCollection');
+	}.property('pickedCollection'),
 	actions : {
 		assignPhotoToCollection : function () {
 			 let albumID = this.get('pickedCollection.id'),
@@ -16,7 +19,7 @@ export default Ember.Controller.extend({
 
 			    this.send('undoPick');
 			    this.get('model.albums').pushObject(album);
-			    this.transitionToRoute('collection', album.get('id'));
+			    this.transitionToRoute('collections.single', album.get('id'));
 		    }
 		},
 
