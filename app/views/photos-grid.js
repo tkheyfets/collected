@@ -17,6 +17,10 @@ export default Ember.CollectionView.extend({
   itemViewClass: PhotoView,
 
   style : function () {
-  	return 'width: -webkit-calc(100.2% * %@1); width: -moz-calc(100.2% * %@1); width: calc(100.2% * %@1);'.fmt(this.get('content.length')); 
+  	return [
+  			'width: -webkit-calc(100vw * %@1)',
+  			'width: -moz-calc(100vw * %@1)',
+  			'width: calc(100vw * %@1);'
+  		   ].join(';').fmt(this.get('content.length')); 
   }.property('content.length')
 });
