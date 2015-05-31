@@ -1,4 +1,4 @@
-<section class="sidebar">
+<section class="sidebar{{unless expanded ' collapsed'}}">
     <div class="header">
         {{#link-to "collections.index" class="lead u-cf"}}
             <i class="icon-pictures u-left"></i>
@@ -15,6 +15,7 @@
             <div class="caption">New collection</div>
         </button>
     </div>
+    <a class="toggle-expand visible-lg visible-md hidden-sm hidden-xs" href="#" {{action 'toggleExpand'}}><i class="icon-{{if expanded 'layout' 'layout3'}}"></i></a>
 </section>
 <section class="container">
     <div class="wrapper-main">

@@ -1,8 +1,10 @@
 primaryColor = #00BCD4;
 dangerColor = #FF5252;
+successColor = #4CAF50;
 
 darkPrimaryColor = darken(primaryColor, 8%);
 darkDangerColor = darken(dangerColor, 8%);
+darkSuccessColor = darken(successColor, 8%);
 
 zindex-tooltip = 1070;
 tooltip-max-width = 200px;
@@ -11,3 +13,20 @@ tooltip-bg = #000;
 tooltip-opacity = .9;
 tooltip-arrow-width = 5px;
 tooltip-arrow-color = tooltip-bg;
+
+// Extra small screen / phone
+screen-xs = 480px;
+
+// Tablet 
+screen-sm-min = 768px;
+
+// Medium screen / desktop
+screen-md-min = 992px;
+
+// Large screen / wide desktop
+screen-lg-min = 1200px;
+
+// So media queries don't overlap when required, provide a maximum
+screen-xs-max = (screen-sm-min - 1);
+screen-sm-max = (screen-md-min - 1);
+screen-md-max = (screen-lg-min - 1);

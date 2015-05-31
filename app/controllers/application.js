@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   needs: ['photos'],
+  expanded: true,
 
   actions : {
     removeCollection : function (album) {
@@ -12,6 +13,9 @@ export default Ember.Controller.extend({
     },
     createCollection : function () {
     	return this.get('controllers.photos').send('createCollection');
+    },
+    toggleExpand: function () {
+      this.set('expanded', !this.get('expanded'));
     }
   }
 });
