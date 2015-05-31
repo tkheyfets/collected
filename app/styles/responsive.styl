@@ -1,64 +1,87 @@
-
-
 @-ms-viewport { width: device-width; }
 
-.visible-xs {
-  @media (max-width: @screen-xs-max) {
-    responsive-visibility();
-  }
-}
-
-.visible-sm {
-  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-    responsive-visibility();
-  }
-}
-
-.visible-md {
-  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-    responsive-visibility();
-  }
-}
-
-.visible-lg {
-  @media (min-width: @screen-lg-min) {
-    responsive-visibility();
-  }
-}
-
-.hidden-xs {
-  @media (max-width: @screen-xs-max) {
-    responsive-invisibility();
-  }
-}
-
-.hidden-sm {
-  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-    responsive-invisibility();
-  }
-}
-.hidden-md {
-  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-    responsive-invisibility();
-  }
-}
-.hidden-lg {
-  @media (min-width: @screen-lg-min) {
-    responsive-invisibility();
-  }
-}
-
 @media (max-width: screen-xs-max) { 
+ .visible-xs {
+    reponsive-visibility();
+  }
+  .hidden-xs {
+    responsive-invisibility();
+  }
+
+  .sidebar { 
+    width: 0; 
+    + .container { padding-left: 0; }
+  }
+
+  .wrapper-main .u-scrollable {
+    overflow-x: auto;
+    overflow-y: hidden;    
+  }
+
+  .photo-list {
+    height: 100%;
+    position: relative;
+    .photo-item {  
+      width: 100vw;
+      transform: translateY(-50%);
+      top: 50%;
+      position: relative;
+      text-align: center;
+    }
+  }
 }
 
 @media (min-width: screen-sm-min) and (max-width: screen-sm-max) {
+  .visible-sm {
+    reponsive-visibility();
+  }
+  .hidden-sm {
+    responsive-invisibility();
+  }
 
+  .sidebar {
+      width: 72px;
+      + .container { padding-left: 72px; }
+      .album-list { 
+        calc('height', s('100vh - %s', 172px)); 
+      }
+  }
+
+
+  .photo-list {
+    width: 100% !important;
+    .photo-item {  
+      width: 50%;
+    }
+  }
 }
 
 @media (min-width: screen-md-min) and (max-width: screen-md-max) {
-  
+   .visible-md {
+    reponsive-visibility();
+  }
+  .hidden-md {
+    responsive-invisibility();
+  }
+
+  .photo-list {
+    width: 100% !important;
+    .photo-item {  
+      width: 33.3333%;
+    }
+  }
 }
 
 @media (min-width: screen-lg-min) {
-  
+   .visible-lg {
+    reponsive-visibility();
+  }
+  .hidden-lg {
+    responsive-invisibility();
+  }
+
+  .photo-list {
+    width: 100% !important;
+    .photo-item { width: 25%; }
+  }
 }
