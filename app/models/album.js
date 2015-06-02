@@ -2,7 +2,11 @@ import DS from 'ember-data';
 
 let Album = DS.Model.extend({
   name: DS.attr(),
-  photos: DS.hasMany('photo')
+  photos: DS.hasMany('photo'),
+  
+  nameTotal : function () {
+    return '%@ %@'.fmt(this.get('name'), this.get('photos.length'));
+  }.property('name', 'photos.length')
 });
 
 Album.reopenClass({
