@@ -17,7 +17,7 @@ a {
 .empty-album-list {
   top: 50%;
   position: relative;
-  transform: translateY(-50%);
+  translY(-50%);
 }
 
 .btn-group {
@@ -101,7 +101,7 @@ input[type="text"] {
   }
 
   > * { width: 240px; }
-  + .container { 
+  ~ .container { 
     padding-left: 240px; 
     trans(padding-left, .25s);
   }
@@ -124,7 +124,7 @@ input[type="text"] {
 
   &.collapsed { 
     width: 72px; 
-    + .container { padding-left: 72px;}
+    ~ .container { padding-left: 72px;}
     .toggle-expand { 
       width: 72px; 
       text-align: center;
@@ -169,7 +169,7 @@ input[type="text"] {
       font-size: 24px;
       right: -24px;
       top: 50%;
-      transform: translateY(-50%);
+      translY(-50%);
       opacity: 0;
       trans(all, .25s);
     }
@@ -254,7 +254,7 @@ input[type="text"] {
     img {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      translY(-50%);
       right: 24px;
       z-index: 2;
       height: 60px;
@@ -273,7 +273,7 @@ input[type="text"] {
     width: 100%;
     padding: 0 24px;
     top: 50%;
-    transform: translateY(-50%);
+    translY(-50%);
     text-align: center;
     [class*="icon-"] {
       font-size: 200px;
@@ -302,7 +302,7 @@ input[type="text"] {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transl(-50%, -50%);
         text-align: center;
         opacity: 0;
         trans(opacity, .25s);
@@ -352,7 +352,7 @@ input[type="text"] {
   width: 480px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transl(-50%, -50%);
   position: absolute;
 
 }
@@ -420,4 +420,42 @@ input[type="text"] {
     
     &.open .album-list { display: block; }
   }
+}
+
+.album-header {
+  background-color: primaryColor;
+  border-bottom: 1px solid darkPrimaryColor;
+  padding: 12px 6px 6px;
+}
+
+.dropdown-container {
+    position: relative;
+    width: 240px;
+    margin: 0 auto;
+    &:before {
+        position: absolute;
+        content: '';
+        border-color: #fff;
+        width: 0; 
+        height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #fff;
+        top: 14px;
+        right: 8px;
+        pointer-events: none;
+    }
+
+    select {
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: transparent;
+      border: none;
+      width: 100%;
+      color: #fff;
+      text-align: center;
+      padding: 12px 0;
+      outline: none;
+    }
 }

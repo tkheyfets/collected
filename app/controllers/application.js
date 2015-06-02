@@ -4,7 +4,19 @@ export default Ember.Controller.extend({
   needs: ['photos'],
   expanded: true,
 
+  selectedAlbumDidChange : function () {
+      this.send('changeToRoute', this.get('selectedAlbum'));
+  }.observes('selectedAlbum'),
+
   actions : {
+    changeToRoute : function (id) {
+        if (!!id) {
+          this.transitionToRoute('collections.single', id);
+        } else {
+          this.transitionToRoute('collections.index');
+        }
+    },
+
     removeCollection : function (album) {
       return this.get('controllers.photos').send('removeCollection', album);
     },

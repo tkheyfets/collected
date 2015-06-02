@@ -10,7 +10,7 @@
 
   .sidebar.collapsed, .sidebar { 
     width: 0; 
-    + .container { padding-left: 0; }
+    ~ .container { padding-left: 0; }
   }
 
   .wrapper-main .u-scrollable {
@@ -29,6 +29,16 @@
       text-align: center;
     }
   }
+
+  .panel, .panel.panel-extended {
+      padding: 0 6px 6px;
+
+      .btn-group { 
+        position: absolute;
+        top: 10px;
+        right: 8px;
+      }
+  }
 }
 
 @media (min-width: screen-sm-min) and (max-width: screen-sm-max) {
@@ -41,7 +51,7 @@
 
   .sidebar.collapsed, .sidebar {
       width: 72px;
-      + .container { padding-left: 72px; }
+      ~ .container { padding-left: 72px; }
       .album-list { 
         calc('height', s('100vh - %s', 172px)); 
       }

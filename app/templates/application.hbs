@@ -17,11 +17,16 @@
     </div>
     <a class="toggle-expand visible-lg visible-md hidden-sm hidden-xs" href="#" {{action 'toggleExpand'}}><i class="icon-{{if expanded 'layout' 'layout3'}}"></i></a>
 </section>
+<header class="visible-xs hidden-sm hidden-md hidden-lg album-header">
+    <div class="dropdown-container">
+        {{view "select" content=albumList optionValuePath="content.id" optionLabelPath="content.name"  prompt="All" value=controller.selectedAlbum}}
+    </div>
+</header>
 <section class="container">
     <div class="wrapper-main">
         <header class="header">
             <h1>
-                <img alt="Collected" src="/assets/img/brand.svg" />
+                <img class="hidden-xs" alt="Collected" src="/assets/img/brand.svg" />
                 {{x-summary album=controller.currentAlbum
                             showModal="showModal"
                             remove="removeCollection"
